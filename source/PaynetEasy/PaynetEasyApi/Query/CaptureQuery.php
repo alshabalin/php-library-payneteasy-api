@@ -18,7 +18,10 @@ class CaptureQuery extends PaymentQuery
         // mandatory
         array('client_orderid',     'payment.clientId',             true,   Validator::ID),
         array('orderid',            'payment.paynetId',             true,   Validator::ID),
-        array('login',              'queryConfig.login',            true,   Validator::MEDIUM_STRING)
+        array('login',              'queryConfig.login',            true,   Validator::MEDIUM_STRING),
+
+        array('amount',             'payment.amount',               false,    Validator::AMOUNT),
+        array('currency',           'payment.currency',             false,    Validator::CURRENCY),
     );
 
     /**
